@@ -1,0 +1,238 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\title{Databáze online eshopu}
+\author{ Matěj F. Lukáč, Ondřej Mráček, David Veselý, Branislav Drabčák }
+\date{10. Listopad 2021}
+\maketitle
+
+\begin{abstract}
+Tento dokument byl vypracovaný společně se všemi členy týmu a ověřuje základní znalosti \LaTeX{}, databází a projektového řízení.
+
+Tým pracoval samostatně a využíval všechny dostupné materiály na Moodle nebo internetu. Veškeré licenční a právní náležitosti jsou upraveny v tomto dokumentu.
+
+Těm, který není tento dokument určen nemají žádné právo na využití obsahu tohoto dokumentu.
+
+Veškerá data osob a předmětů jsou smyšlená a nezakládají se na skutečnosti.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Popis databáze}
+Tato databáze uchovává informace o produktech eshopu. 
+Počet produktů, které daný eshop nabízí a také informace o proběhnutých a probíhajících obědnávkách.
+\newpage
+\section{Licenční informace a HW požadavky}
+\subsection{Licence}
+
+\begin{tabular}{ |c|c| } 
+ \hline
+  Firefox  &  Mozilla Public Licence 2.0 \\ 
+ \hline
+  phpMyAdmin &  GNU General public license version 2 \\ 
+ \hline
+  UwAmp &  GNU General public license \\ 
+  \hline
+   Overleaf &  	AGPLv3 GNU Affero General Public License\\ 
+  \hline
+\end{tabular}
+
+\subsection{Hardware}
+
+\begin{itemize}
+    \item{Procesor Intel® Core™ i3-4160 (3M Cache, 3.60 GHz)}
+    \item{Pevný disk 500 GB}
+    \item{Operační paměť 4 GB}
+
+\end{itemize}
+
+\subsection{Software}
+
+\begin{itemize}
+\item{Firefox}
+\item{phpMyAdmin}
+\item{UwAmp}
+\item{Overleaf}
+
+\end{itemize}
+
+\newpage
+\section{Enumerizace hodnot}
+\subsection{Normované enumerizace}
+order country iso3166-1
+\subsection{Custom enumerizace}
+product brand nike adidas atd
+\newpage
+\section{Databázová struktura}
+\subsection{ER diagram}
+\includegraphics[scale = 0.5]{seminarka.jpg}
+\subsection{Tabulka products}
+\subsubsection{Struktura}
+
+\begin{tabular}{|c|}
+     \hline
+     product-id \\
+     \hline
+     product-name \\
+     \hline
+     product-weight \\
+     \hline
+     product-price \\
+     \hline
+     product-short-desc \\
+     \hline
+     product-long-decs \\
+     \hline
+     product-image \\
+     \hline
+     product-stock \\
+     \hline
+     product-location \\
+     \hline
+     product-parameters \\
+     \hline
+     product-brand \\
+     \hline
+     product-category-id \\
+     \hline
+\end{tabular}
+
+\subsubsection{Provázání tabulky}
+
+\begin{itemize}
+    \item{products-categories-has-many-products}
+    \item{products-has-many-order-details}
+\end{itemize}
+
+\subsection{Tabulka product categories}
+\subsubsection{Struktura}
+
+\begin{tabular}{|c|}
+ \hline
+ category-ID \\
+ \hline
+ category-name \\
+ \hline
+\end{tabular}
+
+\subsubsection{Provázání tabulky}
+
+\begin{itemize}
+    \item{products-categories-has-many-products}
+\end{itemize}
+
+\subsection{Tabulka users}
+
+\begin{tabular}{|c|}
+     \hline
+     users-email  \\
+     \hline
+     users-password \\
+     \hline
+     users-first-name \\
+     \hline
+     users-last-name \\
+     \hline
+     users-city \\
+     \hline
+     users-state \\
+     \hline
+     users-zip \\
+     \hline
+     users-ip \\
+     \hline
+     users-phone \\
+     \hline
+     users-adress \\
+     \hline
+\end{tabular}
+
+
+\subsubsection{Struktura}
+\subsubsection{Provázání tabulky}
+
+\begin{itemize}
+    \item{users-has-many-orders}
+\end{itemize}
+
+\subsection{Tabulka orders}
+\subsubsection{Struktura}
+
+\begin{tabular}{ |c| }
+\hline
+ order-id \\
+\hline
+ order-users-id \\  
+ \hline
+ order-amount  \\
+ \hline
+ order-shipName \\
+ \hline
+ order-shipAdress \\
+ \hline
+ order-city \\
+ \hline
+ order-state \\
+ \hline
+ order-zip \\
+ \hline 
+ order-country \\
+ \hline
+ order-phone \\
+ \hline
+ order-shipping-date \\
+ \hline
+ order-email \\
+ \hline
+ order-shipped \\
+ \hline
+ order-number \\
+ \hline
+\end{tabular}
+
+\subsubsection{Provázání tabulky}
+
+\begin{tabular}{|c|}
+    \hline
+    orders-has-many-order-details \\
+    \hline
+    users-has-many-orders \\
+    \hline
+\end{tabular}
+
+\subsection{Tabulka order details}
+\subsubsection{Struktura}
+
+\begin{tabular}{|c|}
+    \hline
+    order-details-id \\
+    \hline
+    order-id \\
+    \hline
+    products-id \\
+    \hline
+    detail-name \\
+    \hline
+    detail-SKU \\
+    \hline
+    detail-quantity \\
+    \hline
+\end{tabular}
+
+\subsubsection{Provázání tabulky}
+\begin{itemize}
+    \item{orders-has-many-order-details}
+    \item{products-has-many-order-details}
+\end{itemize}
+
+\end{document}
