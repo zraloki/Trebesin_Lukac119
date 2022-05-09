@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\title{Databáze online eshopu}
+\author{ Matěj F. Lukáč, Ondřej Mráček, David Veselý, Branislav Drabčák }
+\date{10. Listopad 2021}
+\maketitle
+
+\begin{abstract}
+Tento dokument byl vypracovaný společně se všemi členy týmu a ověřuje základní znalosti \LaTeX{}, databází a projektového řízení.
+
+Tým pracoval samostatně a využíval všechny dostupné materiály na Moodle nebo internetu. Veškeré licenční a právní náležitosti jsou upraveny v tomto dokumentu.
+
+Těm, který není tento dokument určen nemají žádné právo na využití obsahu tohoto dokumentu.
+
+Veškerá data osob a předmětů jsou smyšlená a nezakládají se na skutečnosti.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Popis databáze}
+Tato databáze uchovává informace o produktech eshopu. 
+Počet produktů, které daný eshop nabízí a také informace o proběhnutých a probíhajících obědnávkách.
+\newpage
+\section{Licenční informace a HW požadavky}
+\subsection{Licence}
+
+\begin{tabular}{ |c|c| } 
+ \hline
+  Firefox  &  Mozilla Public Licence 2.0 \\ 
+ \hline
+  phpMyAdmin &  GNU General public license version 2 \\ 
+ \hline
+  UwAmp &  GNU General public license \\ 
+  \hline
+   Overleaf &  	AGPLv3 GNU Affero General Public License\\ 
+  \hline
+\end{tabular}
+
+\subsection{Hardware}
+
+\begin{itemize}
+    \item{Procesor Intel® Core™ i3-4160 (3M Cache, 3.60 GHz)}
+    \item{Pevný disk 500 GB}
+    \item{Operační paměť 4 GB}
+
+\end{itemize}
+
+\subsection{Software}
+
+\begin{itemize}
+\item{Firefox}
+\item{phpMyAdmin}
+\item{UwAmp}
+\item{Overleaf}
+
+\end{itemize}
+
+\newpage
+\section{Enumerizace hodnot}
+\subsection{Normované enumerizace}
+\subsection{Custom enumerizace}
+\newpage
+\section{Databázová struktura}
+\subsection{ER diagram}
+\subsection{Tabulka XXX}
+\subsubsection{Struktura}
+\subsubsection{Provázání tabulky}
+\subsection{Tabulka XXX}
+\subsubsection{Struktura}
+\subsubsection{Provázání tabulky}
+\subsection{Tabulka XXX}
+\subsubsection{Struktura}
+\subsubsection{Provázání tabulky}
+
+
+\end{document}
